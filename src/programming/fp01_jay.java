@@ -1,6 +1,7 @@
 package programming;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -16,13 +17,29 @@ public class fp01_jay {
 
         List <String> courses = List.of("java", "spring", "boot", "spring boot", "python");
 
-        CoursesWithAtleast4letters(courses);
+
+        printNoOfCharsInEachCourseName(courses);
+//        printCubeOfODDnos(nums);
+//        printSquaresOfAllNos(nums);
+//        CoursesWithAtleast4letters(courses);
 //        printCoursesContainWord(courses, "spring");
 //        printAllCourses(courses);
-//        printEvenNumbsInList (nums, alphabets);
+//        printEvenNumbsInList (nums, al  phabets);
     }
 
 
+
+    public static void printNoOfCharsInEachCourseName ( List<String> courses ) {
+        courses.stream().map(n -> n.length()).forEach(System.out::println );
+    }
+
+    public static void printCubeOfODDnos ( List<Integer> nums ) {
+        nums.stream().filter( n -> n%2!= 0).map(m -> m*m*m).forEach(System.out::println);
+    }
+
+    public static void printSquaresOfAllNos ( List<Integer> nums ){
+              nums.stream().map(n -> n*n).forEach(System.out::println);
+    }
 
     public static void CoursesWithAtleast4letters ( List<String> courses ){
         courses.stream().filter(c -> c.length() > 4 ).forEach(System.out::println); ;
