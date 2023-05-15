@@ -14,9 +14,35 @@ public class fp01_jay {
 
         List<String> alphabets = List.of("a", "b", "c", "d");
 
-        printEvenNumbsInList (nums, alphabets);
+        List <String> courses = List.of("java", "spring", "boot", "spring boot", "python");
+
+        CoursesWithAtleast4letters(courses);
+//        printCoursesContainWord(courses, "spring");
+//        printAllCourses(courses);
+//        printEvenNumbsInList (nums, alphabets);
     }
 
+
+
+    public static void CoursesWithAtleast4letters ( List<String> courses ){
+        courses.stream().filter(c -> c.length() > 4 ).forEach(System.out::println); ;
+
+    }
+
+    public static void printCoursesContainWord ( List<String> courses, String s1 ){
+            courses.stream().filter( c -> c.contains("spring")).forEach(System.out::println);
+    }
+
+
+    public static void printAllCourses ( List<String> courses ){
+        courses.stream().forEach(System.out::println);
+
+//        for ( String s: courses ) {
+//            System.out.println("courses = " + s);
+//        }
+
+
+    }
 
     public static boolean isEven(int n){
         System.out.println("isEven being called with n =" + n);
@@ -34,10 +60,11 @@ public class fp01_jay {
         var even = nums.stream().filter(n -> n%2==0 ).collect(Collectors.toList());
         System.out.println("even ="+even);
 
-
         var evenFn = nums.stream().filter( fp01_jay::isEven ).collect(Collectors.toList());
         System.out.println("evenFn ="+evenFn);
-
+//Print Odd numbers.
+        var odd = nums.stream().filter(n -> n%2!=0 ).collect(Collectors.toList());
+        System.out.println("odd ="+odd);
 
 
 
