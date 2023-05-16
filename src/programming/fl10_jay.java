@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class fl10_jay {
@@ -39,11 +40,17 @@ public class fl10_jay {
     }
 
     private static List<Integer> ListWithLengthsOfTitlesFn(List<String> courses) {
-        return courses.stream().map(e -> e.length()).toList();
+//        return courses.stream().map(e -> e.length()).toList();
+
+        return courses.stream().map(getStringIntegerFunction()).toList();
+    }
+// good , created a whole method out of small operation.
+    private static Function<String, Integer> getStringIntegerFunction() {
+        return e -> e.length();
     }
 
     private static List<Integer> listWithEvenNosFilteredFromNumList(List<Integer> nums) {
-        return nums.stream().filter( i -> i%2 ==0).collect(Collectors.toList());
+        return nums.stream().filter( i -> i%2 ==0 ).collect(Collectors.toList());
     }
 
 

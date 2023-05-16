@@ -3,6 +3,7 @@ package programming;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,7 @@ public class fp01_jay {
 
         List <String> courses = List.of("java", "spring", "boot", "spring boot", "python");
 
+     
 
         printNoOfCharsInEachCourseName(courses);
 //        printCubeOfODDnos(nums);
@@ -27,6 +29,13 @@ public class fp01_jay {
 //        printEvenNumbsInList (nums, al  phabets);
     }
 
+
+//    public static boolean isEven(int n){
+//        System.out.println("isEven being called with n =" + n);
+//        if (n%2 == 0 ) { return true; }
+//        else { return false; }
+//
+//    }
 
 
     public static void printNoOfCharsInEachCourseName ( List<String> courses ) {
@@ -64,12 +73,13 @@ public class fp01_jay {
 
     }
 
-    public static boolean isEven(int n){
-        System.out.println("isEven being called with n =" + n);
-        if (n%2 == 0 ) { return true; }
-        else { return false; }
-
-    }
+    // Moved above.
+//    public static boolean isEven(int n){
+//        System.out.println("isEven being called with n =" + n);
+//        if (n%2 == 0 ) { return true; }
+//        else { return false; }
+//
+//    }
 
     public static void printEvenNumbsInList ( List<Integer> nums, List<String> alphas ){
 //            nums.stream().map(n->(n%2==0));
