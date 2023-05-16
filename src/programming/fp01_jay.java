@@ -30,7 +30,10 @@ public class fp01_jay {
 
 
     public static void printNoOfCharsInEachCourseName ( List<String> courses ) {
-        courses.stream().map(n -> n.length()).forEach(System.out::println );
+//Good
+        courses.stream().map(n -> n + " " + n.length()).forEach(System.out::println );
+//        courses.stream().map(n -> n.length()).forEach(System.out::println );
+
     }
 
     public static void printCubeOfODDnos ( List<Integer> nums ) {
